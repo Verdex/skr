@@ -1,9 +1,9 @@
 use std::fs;
 use std::path::PathBuf;
 
-use structuralize::data::*;
+// TODO : the basic structure makes sense here but Data and the ultimate result does not.
 
-use crate::parsing;
+/*
 
 // TODO : check to see if there's a .gitignore and then check that to see which files should be ignored
 // TODO : flag to ignore the .gitignore
@@ -55,3 +55,5 @@ fn dir_data( dir : PathBuf, dir_name : Box<str> ) -> std::io::Result<Data> {
                   , params: vec![Data::SymStr(SymStr::String(dir_name)), Data::List(directory_data)]
                   })
 }
+
+*/
