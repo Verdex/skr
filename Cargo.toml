@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 dealize = { git = "https://www.github.com/verdex/dealize", version = "0.3.0", tag = "release-0.3.0" }
-yoke = { git = "https://www.github.com/verdex/yoke", version = "0.1.0", tag = "release-0.1.0" }
+yoke = { git = "https://www.github.com/verdex/yoke", version = "0.2.0", tag = "release-0.2.0" }

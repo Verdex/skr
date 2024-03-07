@@ -17,5 +17,5 @@ dependencies = [
 
 [[package]]
 name = "yoke"
-version = "0.1.0"
-source = "git+https://www.github.com/verdex/yoke?tag=release-0.1.0#648308580dfb487a0cae294f42dfb00d223e6d63"
+version = "0.2.0"
+source = "git+https://www.github.com/verdex/yoke?tag=release-0.2.0#ab29c8df4583090faf322b912ce22a5aca1b59e7"
