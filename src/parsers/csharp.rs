@@ -11,21 +11,20 @@ pub enum CSharp {
     Record,
 }
 
-pub fn parse(input : &str) -> Result<CSharp, Box<dyn std::error::Error>> {
+pub fn parse(input : &str) -> Result<Vec<CSharp>, Box<dyn std::error::Error>> {
 
-    let w = lexer::lex(input)?;
+    let ls = lexer::lex(input)?;
+    let bs = bracketer::bracket(ls.into_iter())?;
+    let output = bracket::process(&[], bs.into_iter())?;
 
-
-    Ok(CSharp::Record)
+    Ok(output)
 }
 
-fn lex(input : Vec<Lexeme>) -> impl Iterator<Item = Lexeme> {
-    
+fn blarg(input : &mut Vec<Lexeme>) {
 }
 
 #[cfg(test)]
 mod test {
     use super::*;
-
 
 }

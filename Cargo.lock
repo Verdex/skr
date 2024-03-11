@@ -4,8 +4,8 @@ version = 3
 
 [[package]]
 name = "dealize"
-version = "0.3.0"
-source = "git+https://www.github.com/verdex/dealize?tag=release-0.3.0#2d80cb5e3391386e0ac00359f8b92d5a3ecda2a9"
+version = "0.4.0"
+source = "git+https://www.github.com/verdex/dealize?tag=release-0.4.0#f6309a0f37be3a2dc89b6cb37c3be8d58295a740"
 
 [[package]]
 name = "skr"
