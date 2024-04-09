@@ -4,18 +4,12 @@ version = 3
 
 [[package]]
 name = "dealize"
-version = "0.4.0"
-source = "git+https://www.github.com/verdex/dealize?tag=release-0.4.0#f6309a0f37be3a2dc89b6cb37c3be8d58295a740"
+version = "0.5.0"
+source = "git+https://www.github.com/verdex/dealize?tag=release-0.5.0#ef7579d8f159e61a169540c541962fbfd00ab383"
 
 [[package]]
 name = "skr"
 version = "0.1.0"
 dependencies = [
  "dealize",
- "yoke",
 ]
-
-[[package]]
-name = "yoke"
-version = "0.2.0"
-source = "git+https://www.github.com/verdex/yoke?tag=release-0.2.0#ab29c8df4583090faf322b912ce22a5aca1b59e7"
