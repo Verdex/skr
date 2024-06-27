@@ -102,9 +102,13 @@ fn rule() -> Rc<Rule<char, IR>> {
             , |cs| lproj!(cs[2], x, IR::Comment(x.iter().map(|y| proj!(y, IR::C(z), z)).collect::<String>().into()) )
             );
 
-            TOP_RULE = Some(Rule::new("top", 
-                vec![Match::choice(&[&block_comment, &line_comment])], 
-                |x| rproj!(x[0])));
+            TOP_RULE = Some(
+                Rule::new
+                ("top"
+                , vec![Match::choice(&[ &block_comment
+                                      , &line_comment
+                                      ])]
+                , |x| rproj!(x[0])));
             Rc::clone(TOP_RULE.as_ref().unwrap())
         }
         else {
