@@ -85,7 +85,26 @@ fn rule() -> Rc<Rule<char, IR>> {
             , |cs| lproj!(cs[2], x, IR::Comment(x.iter().map(|y| proj!(y, IR::C(z), z)).collect::<String>().into()) )
             );
 
-            TOP_RULE = Some(Rule::new("top", vec![], |_| Ok(IR::None)));
+            let end_block_comment : Rc<Rule<char, IR>> = Rule::new 
+            ( "end_block_comment"
+            , vec![ star.clone(), slash.clone() ]
+            , |_| Ok(IR::None)
+            );
+
+            let block_comment : Rc<Rule<char, IR>> = Rule::new 
+            ( "block_comment"
+            , vec![ slash.clone()
+                  , star.clone()
+                  , Match::until(&anything, &end_block_comment)
+                  , star.clone()
+                  , slash.clone()
+                  ]
+            , |cs| lproj!(cs[2], x, IR::Comment(x.iter().map(|y| proj!(y, IR::C(z), z)).collect::<String>().into()) )
+            );
+
+            TOP_RULE = Some(Rule::new("top", 
+                vec![Match::choice(&[&block_comment, &line_comment])], 
+                |x| rproj!(x[0])));
             Rc::clone(TOP_RULE.as_ref().unwrap())
         }
         else {
