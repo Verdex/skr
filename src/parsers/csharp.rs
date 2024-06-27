@@ -28,6 +28,15 @@ macro_rules! iproj {
     }
 }
 
+macro_rules! rproj {
+    ($input:expr) => {
+        match &$input {
+            Capture::Result(x) => { Ok(x.clone()) },
+            _ => { unreachable!(); },
+        }
+    }
+}
+
 macro_rules! lproj {
     ($input:expr, $p:pat, $x:expr) => {
         match &$input {
